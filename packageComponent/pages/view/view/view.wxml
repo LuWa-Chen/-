@@ -1,0 +1,17 @@
+<view class="container page" data-weui-theme="{{theme}}">
+  <view class="img-wrap">
+  <view class="index-desc">请上传两张侧脸、一张正脸照片</view>
+    <view class="imglist">
+      <view class="item" wx:for="{{imgs}}" wx:key="item">
+        <image src="{{item}}" alt=""></image>
+        <view class='delete' bindtap='deleteImg' data-index="{{index}}">
+          <image src="../../../images/icon.png"></image>
+        </view>
+      </view>
+      <view class="last-item" wx:if="{{imgs.length >= 3 ? false : true}}" bindtap="bindUpload">
+        <text class="sign">+</text>
+      </view>
+    </view>
+  </view>
+
+</view>
